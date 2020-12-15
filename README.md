@@ -14,20 +14,23 @@ This is a simple example of a dockerized express web application.  It returns a 
    ```
    
 ## More Info
+#### Docker
 The Docker run command:
 ```
 docker run -d -v ${PWD}:/app -v /app/node_modules -p 8080:3000 --name foo --rm simple
 ```
 * -p 8080:3000
-   This redirects 8080 from your browser or external application to the container's port 3000 because the application is listening on port 3000
+   * This redirects 8080 from your browser or external application to the container's port 3000 because the application is listening on port 3000
 * --name foo
-   This is the simple name for the container, you can stop it with:
+   * This is the simple name for the container, you can stop it with:
    ```
    docker stop foo
    ```
 * --rm simple
-   This is the name of the container you built from the first command
+   * This is the name of the container you built from the first command
 
+
+#### Server code
 The code is doesn't serve any static page to make it really easy for an HTTP response:
 ```
 const express = require('express')
