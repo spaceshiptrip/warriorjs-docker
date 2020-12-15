@@ -3,29 +3,18 @@ FROM node:12
 # set working directory
 WORKDIR /app
 
-# add `/app/node_modules/.bin` to $PATH
+# update your path to find the app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-
-# Create app directory
-#WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-#COPY package*.json ./
-
 RUN yarn install
-# If you are building your code for production
-# RUN npm ci --only=production
 
-# add app
+# add the whole shibang to the container
 COPY . /app
 
-# Bundle app source
-# COPY . .
+# what's the docker port you want to connect to?
+EXPOSE 3000
 
-EXPOSE 8080
+# run the server application
 CMD [ "node", "app.js" ]
