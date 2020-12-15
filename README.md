@@ -1,18 +1,25 @@
 This is a simple example of a dockerized express web application.  It returns a message when the root location is hit.  
+## Install
 
 1. Build Dockerfile:
    ```
    docker build -t simple .
    ```
+   
+## Execution
 1. Run Dockerfile:
    ```
    docker run -d -v ${PWD}:/app -v /app/node_modules -p 8080:3000 --name foo --rm simple
    ```
+   
+## Usage
 1. Test with cURL command:
    ```
    curl -i localhost:8080
    ```
-   
+1. Open browser to `http://localhost:8080`
+
+
 ## More Info
 #### Docker
 The Docker run command:
