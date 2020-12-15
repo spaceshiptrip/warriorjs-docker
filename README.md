@@ -1,4 +1,6 @@
+# Simple Docker Express Application
 This is a simple example of a dockerized express web application.  It returns a message when the root location is hit.  
+
 ## Install
 
 1. Build Dockerfile:
