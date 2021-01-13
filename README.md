@@ -67,3 +67,12 @@ connect().use(serveStatic(__dirname)).listen(port, function(){
 ```
 This serves the local directory 
 
+h1. DEBUG
+```
+docker run -it --rm  --entrypoint sh simple
+```
+
+That will get you in the container shell and you can run the app manually to see the error message:
+```
+# docker run simple
+```
